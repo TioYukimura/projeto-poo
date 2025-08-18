@@ -9,13 +9,11 @@ class FormularioAlunoScreen extends StatefulWidget {
 }
 
 class _FormularioAlunoScreenState extends State<FormularioAlunoScreen> {
-  // Controllers para pegar o texto dos campos do formulário
   final _nomeController = TextEditingController();
   final _cpfController = TextEditingController();
   final _matriculaController = TextEditingController();
   final _cursoController = TextEditingController();
 
-  // Função para criar o objeto Aluno e retorná-lo para a tela anterior
   void _salvarFormulario() {
     final novoAluno = Aluno(
       _nomeController.text,
@@ -23,7 +21,6 @@ class _FormularioAlunoScreenState extends State<FormularioAlunoScreen> {
       _matriculaController.text,
       _cursoController.text,
     );
-    // 'Navigator.pop' fecha a tela atual e envia 'novoAluno' como resultado
     Navigator.pop(context, novoAluno);
   }
 

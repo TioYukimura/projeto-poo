@@ -1,4 +1,3 @@
-// Arquivo: lib/formulario_turma_screen.dart
 
 import 'package:flutter/material.dart';
 import 'escola_models.dart';
@@ -18,21 +17,18 @@ class _FormularioTurmaScreenState extends State<FormularioTurmaScreen> {
   final _cargaHorariaController = TextEditingController();
 
   void _salvarTurma() {
-    // Cria o Professor primeiro
     final novoProfessor = Professor(
       nome: _nomeProfessorController.text,
       cpf: _cpfProfessorController.text,
       cargaHoraria: int.tryParse(_cargaHorariaController.text) ?? 0,
     );
 
-    // Cria a Disciplina, associando o professor a ela
     final novaDisciplina = Disciplina(
       nome: _nomeDisciplinaController.text,
       codigo: _codigoDisciplinaController.text,
       professor: novoProfessor,
     );
 
-    // Cria a Turma, associando a disciplina a ela
     final novaTurma = Turma(disciplina: novaDisciplina);
 
     Navigator.pop(context, novaTurma);

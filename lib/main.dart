@@ -1,4 +1,3 @@
-// Arquivo: lib/main.dart
 
 import 'package:flutter/material.dart';
 import 'escola_models.dart';
@@ -108,7 +107,6 @@ class _TurmaScreenState extends State<TurmaScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Usando uma variável local para o tema para fácil acesso às cores
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -164,7 +162,6 @@ class _TurmaScreenState extends State<TurmaScreen> {
                 Text('Professor(a): ${_turma!.disciplina.professor.nome}'),
                 Text('Carga Horária: ${_turma!.disciplina.professor.cargaHoraria} horas'),
                 const SizedBox(height: 8),
-                // Exibe a média geral da turma, usando o método da interface!
                 Text('Média Geral da Turma: ${_turma!.calcularMedia().toStringAsFixed(2)}', style: const TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic)),
               ],
             ),
